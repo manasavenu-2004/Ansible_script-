@@ -1,0 +1,11 @@
+---
+- name: Create a file on all hosts
+  hosts: all
+  become: false  # Set to true if creating a file in a system directory (requires root)
+
+  tasks:
+    - name: Ensure the target file exists
+      ansible.builtin.file:
+        path: /home/ubuntu/test_file.txt
+        state: touch
+        mode: '0644'

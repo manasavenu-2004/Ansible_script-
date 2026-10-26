@@ -1,0 +1,15 @@
+#SPDX-License-Identifier: MIT-0
+---
+# tasks file for my_custom_role_1
+# roles/file_creator/tasks/main.yml
+- name: Ensure target directory exists
+  ansible.builtin.file:
+    path: /home/ubuntu/roles_test
+    state: directory
+    mode: '0755'
+
+- name: Create a sample text file
+  ansible.builtin.copy:
+    content: "This file was automatically created by an Ansible role.\n"
+    dest: /home/ubuntu/roles_test/my_roles_test_file.txt
+    mode: '0644'

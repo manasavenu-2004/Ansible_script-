@@ -1,0 +1,6 @@
+---
+- name: Execute file creation role
+  hosts: test-server
+  become: yes
+  roles:
+    - nginx_install
